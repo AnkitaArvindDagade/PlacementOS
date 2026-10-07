@@ -2,7 +2,7 @@
 
 A private placement preparation workspace for managing company-wise topic progress and study sessions.
 
-🔗 **Live Project**: https://placementos-git-main-ankitaarvinddagades-projects.vercel.app/
+🔗 **Live Project**: [Open Website](https://placementos-git-main-ankitaarvinddagades-projects.vercel.app/)
 
 ## Overview
 
