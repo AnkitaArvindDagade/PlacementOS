@@ -1,0 +1,7 @@
+node_modules
+.next
+.next-verification
+.next-dev
+.env.local
+
+.vercel

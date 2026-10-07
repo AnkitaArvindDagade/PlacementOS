@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>Placement Momentum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">↗</span><span>placement<br>momentum</span></a>
+        <nav id="company-nav" class="company-nav" aria-label="Companies"></nav>
+        <button class="add-company side-action" id="add-company">+ Add company</button>
+        <div class="sidebar-footer"><p>Small sessions compound.</p><strong>Show up today.</strong></div>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <div><p class="eyebrow" id="today-label"></p><h1 id="company-title">Master preparation</h1></div>
+          <div class="top-actions"><button class="icon-button" id="settings" title="Data settings">⚙</button><button class="primary" id="add-topic">+ Add topic</button></div>
+        </header>
+
+        <section class="hero-grid">
+          <article class="quote-card"><p class="eyebrow">YOUR FOCUS</p><h2 id="quote">Preparation is how confidence is built.</h2><p id="quote-author">One focused block at a time.</p></article>
+          <article class="streak-card"><div><p class="eyebrow">CURRENT STREAK</p><strong><span id="streak-count">0</span> days</strong><p id="streak-copy">Complete one topic to begin.</p></div><div class="flame">♨</div></article>
+          <article class="timer-card"><p class="eyebrow">FOCUS TIMER</p><div class="timer" id="timer-display">25:00</div><div class="timer-buttons"><button id="timer-start" class="primary">Start</button><button id="timer-reset">Reset</button></div></article>
+        </section>
+
+        <section class="progress-area">
+          <div class="section-heading"><div><p class="eyebrow">PREPARATION MAP</p><h2>Your roadmap</h2></div><div class="progress-total"><strong id="done-count">0</strong><span> / </span><span id="topic-count">0</span> complete</div></div>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+        </section>
+
+        <section class="toolbar"><label class="search"><span>⌕</span><input id="search" placeholder="Search topics" /></label><select id="filter"><option value="all">All topics</option><option value="open">To prepare</option><option value="done">Completed</option></select><button class="text-button" id="expand-all">Expand all</button></section>
+        <section id="topic-groups" class="topic-groups"></section>
+      </section>
+    </main>
+
+    <dialog id="company-dialog"><form method="dialog" class="modal"><button class="close" value="cancel">×</button><p class="eyebrow">COMPANY VIEW</p><h2>Add a company</h2><p>Create a dedicated preparation checklist while keeping your master roadmap intact.</p><label>Company name<input required id="company-name" placeholder="e.g. Atlassian" /></label><div class="modal-actions"><button value="cancel">Cancel</button><button class="primary" id="save-company" value="default">Create view</button></div></form></dialog>
+    <dialog id="topic-dialog"><form method="dialog" class="modal"><button class="close" value="cancel">×</button><p class="eyebrow" id="topic-modal-label">CUSTOM TOPIC</p><h2 id="topic-modal-title">Add a topic</h2><label>Topic<input required id="topic-name" placeholder="e.g. System design" /></label><label>Category<input id="topic-category" list="categories" placeholder="e.g. Core CS" /><datalist id="categories"></datalist></label><div class="modal-actions"><button value="cancel">Cancel</button><button class="primary" id="save-topic" value="default">Save topic</button></div></form></dialog>
+    <dialog id="settings-dialog"><form method="dialog" class="modal"><button class="close" value="cancel">×</button><p class="eyebrow">YOUR DATA</p><h2>Storage</h2><p id="storage-copy">Your tracker is saved locally in this browser.</p><button type="button" id="export-data">Download backup</button><label class="upload-label">Restore backup<input type="file" id="import-data" accept="application/json" /></label><button type="button" class="danger" id="reset-data">Reset all data</button></form></dialog>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
